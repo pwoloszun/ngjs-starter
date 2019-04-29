@@ -8,11 +8,19 @@ angular.module('myApp', [
   'ngResource',
   'ngRoute',
   // app specific
+  'myApp.shared',
   'myApp.view1',
   'myApp.view2',
   'myApp.version'
-]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+]).config([
+  '$locationProvider',
+  '$routeProvider',
+  '$mdIconProvider',
+  function ($locationProvider, $routeProvider, $mdIconProvider) {
+    $mdIconProvider.fontSet('md', 'material-icons');
 
-  $routeProvider.otherwise({ redirectTo: '/view1' });
-}]);
+    $locationProvider.hashPrefix('!');
+
+    $routeProvider.otherwise({ redirectTo: '/view1' });
+  }
+]);

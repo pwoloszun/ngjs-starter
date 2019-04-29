@@ -9,6 +9,13 @@ window.$script([
   'lib/angular-route/angular-route.js',
   // app
   'app.js',
+  // core
+
+  // shared
+  'shared/main-navigation/main-navigation.js',
+
+  // views/modules
+
   'view1/view1.js',
   'view2/view2.js',
   'core/version/version.js',
