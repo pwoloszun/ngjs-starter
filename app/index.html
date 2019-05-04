@@ -23,42 +23,13 @@
 <body ng-cloak layout="column">
 
 
-<div ng-controller="MainNavigationCtrl as $ctrl" layout="column" style="height: 500px;" ng-cloak>
+<div layout="column" style="height: 500px;" ng-cloak>
 
-  <md-sidenav class="md-sidenav-left"
-              md-component-id="mainNav"
-              md-whiteframe="4">
-    <md-content layout-margin>
-      <h3>Ng Starter</h3>
-      <md-list>
-        <md-list-item ng-repeat="item in $ctrl.linkItems"
-                      class="md-2-line">
-          <a href="{{item.path}}">{{item.text}}</a>
-        </md-list-item>
-      </md-list>
-    </md-content>
-  </md-sidenav>
-
-
-  <md-toolbar class="md-hue-2">
-    <div class="md-toolbar-tools">
-      <md-button ng-click="$ctrl.toggleSideNav()"
-                 class="md-icon-button" aria-label="Menu">
-        <md-icon md-font-icon="menu" aria-label="menu"></md-icon>
-      </md-button>
-      <h2 md-truncate flex>Ng Starter</h2>
-    </div>
-  </md-toolbar>
-
+  <main-navigation></main-navigation>
 
   <md-content flex layout-padding>
     <div layout="column" layout-align="top center">
       <div ng-view></div>
-      <div>
-        <md-button ng-click="$ctrl.toggleSideNav()" class="md-raised md-primary">
-          Toggle Main Nav
-        </md-button>
-      </div>
     </div>
   </md-content>
 

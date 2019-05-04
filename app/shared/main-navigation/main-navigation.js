@@ -2,18 +2,21 @@
 
 angular
   .module('myApp.shared', ['ngMaterial'])
-  .controller('MainNavigationCtrl', [
-    '$scope',
-    '$mdSidenav',
-    function ($scope, $mdSidenav) {
-      this.linkItems = [
-        { path: '#!/view1', text: 'View One' },
-        { path: '#!/view2', text: 'View Two' },
-      ];
+  .component('mainNavigation', {
+    templateUrl: './shared/main-navigation/main-navigation.html',
 
-      this.toggleSideNav = function () {
-        var id = 'mainNav';
-        $mdSidenav(id).toggle();
-      };
-    }
-  ]);
+    controller: [
+      '$mdSidenav',
+      function ($mdSidenav) {
+        this.linkItems = [
+          { path: '#!/view1', text: 'View One' },
+          { path: '#!/view2', text: 'View Two' },
+        ];
+
+        this.toggleSideNav = function () {
+          var id = 'mainNav';
+          $mdSidenav(id).toggle();
+        };
+      }
+    ]
+  });
